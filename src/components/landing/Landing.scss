@@ -1,4 +1,4 @@
-.container {
+.landing-container {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -6,7 +6,6 @@
   overflow: hidden;
   transform-style: preserve-3d;
   background-color: #787777;
-}
 
 .intro-front {
   position: absolute;
@@ -222,3 +221,4 @@
     transform: translateY(10px);
   }
 } */
+}

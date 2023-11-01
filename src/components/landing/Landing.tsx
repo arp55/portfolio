@@ -20,7 +20,7 @@ export default function Landing({ navigate }: Props) {
     // const div = introRef.current;
     // div.classList.toggle("intro-flip");
     // setTimeout(() => {
-      navigate("/portfolio");
+      navigate("/web-portfolio");
     // }, 1500);
   };
 
@@ -82,7 +82,7 @@ export default function Landing({ navigate }: Props) {
   }, [nameRef2]);
 
   return (
-    <AnimatedDiv initial={{x:"-100%",transition:{duration:.4,ease:"linear"}}} animate={{x:"0%",transition:{duration:.4,ease:"linear"}}} exit={{x:"-100%",transition:{duration:.4,ease:"linear"}}} className="container">
+    <AnimatedDiv initial={{x:"-100%",transition:{duration:.4,ease:"linear"}}} animate={{x:"0%",transition:{duration:.4,ease:"linear"}}} exit={{x:"-100%",transition:{duration:.4,ease:"linear"}}} className="landing-container">
         <div className="intro-back"></div>
         <div ref={introRef} className="intro-front">
           <div ref={lineRef} className="line-top" />
