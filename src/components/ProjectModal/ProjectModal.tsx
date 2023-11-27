@@ -53,11 +53,19 @@ export default function ProjectModal({
         <span ref={closeRef2} className="close-btn2"></span>
       </button>
       <div className="box1">
-        <img className="modal-img" src={projects[selIndex].image} />
+        <img
+          className="modal-img"
+          src={projects[selIndex].image}
+          alt={projects[selIndex].name}
+        />
       </div>
       <div className="modal-stack">
         {projects[selIndex].techStack.map((tech, ind) => {
-          return <p className="tech-name">{tech}</p>;
+          return (
+            <p key={ind} className="tech-name">
+              {tech}
+            </p>
+          );
         })}
       </div>
     </div>

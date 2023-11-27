@@ -8,6 +8,156 @@
   transform-style: preserve-3d;
   background-color: #787777;
 
+  .btn-container1 {
+    position: fixed;
+    /* bottom: 20px; */
+    left: 30px;
+    transition: transform 0.5s ease;
+    transform: translateX(-150%) translateZ(8rem);
+    // trying to center
+    top: 45%;
+    z-index: 999;
+
+    .down-btn1 {
+      position: relative;
+      height: 50px;
+      // width: 0;
+      background: none;
+      color: inherit;
+      border: none;
+      padding: 0;
+      font: inherit;
+      cursor: pointer;
+      outline: inherit;
+
+      .btn-topline1 {
+        height: 3px;
+        background-color: #aaaaaa;
+        width: 40px;
+        transition: transform 0.6s ease;
+        transform-origin: 10%;
+        transform: rotate(-40deg);
+        border-bottom-right-radius: 5px;
+        border-top-right-radius: 10px;
+      }
+      .btn-bottomline1 {
+        height: 3px;
+        background-color: #aaaaaa;
+        width: 40px;
+        transition: transform 0.6s ease;
+        transform-origin: 7%;
+        transform: rotate(40deg);
+        border-bottom-right-radius: 20px;
+        border-top-right-radius: 5px;
+        /* position: absolute; */
+        /* bottom: 40px; */
+      }
+
+      .btn-text1 {
+        overflow: hidden;
+        position: absolute;
+        top: 2px;
+        right: -45px;
+      }
+
+      .port-text1 {
+        font-family: "Heebo", sans-serif;
+        display: inline-block;
+        // opacity: 0.2;
+        font-size: 25px;
+        transition: transform 0.2s ease;
+        transform: translateX(-100%);
+        color: #b9b9b9;
+        z-index: 10;
+      }
+
+      &:hover {
+        .port-text1 {
+          font-family: "Heebo", sans-serif;
+          display: inline-block;
+          font-size: 25px;
+          transition: transform 0.2s ease;
+          transform: translateX(0);
+          color: #b9b9b9;
+          z-index: 10;
+        }
+
+        .btn-bottomline1 {
+          transition: transform 0.6s ease;
+          transform-origin: 7%;
+          transform: rotate(55deg);
+        }
+
+        .btn-topline1 {
+          transition: transform 0.6s ease;
+          transform-origin: 10%;
+          transform: rotate(-55deg);
+        }
+      }
+    }
+  }
+
+  .btn-container2 {
+    @extend .btn-container1;
+    right: 30px;
+    left: auto;
+    transform: translateX(150%) translateZ(8rem);
+
+    .down-btn2 {
+      @extend .down-btn1;
+
+      .btn-topline2 {
+        @extend .btn-topline1;
+        transform-origin: 92%;
+        transform: rotate(40deg);
+      }
+
+      .btn-bottomline2 {
+        @extend .btn-bottomline1;
+        transform-origin: 92%;
+        transform: rotate(-40deg);
+      }
+
+      .btn-text2 {
+        @extend .btn-text1;
+        top: -3px;
+        left: -60px;
+        right: auto;
+      }
+
+      .port-text2 {
+        @extend .port-text1;
+        transform: translateX(100%);
+      }
+
+      &:hover {
+        .port-text2 {
+          z-index: 99999;
+          opacity: 1;
+          transition: transform 0.2s ease;
+          transform: translateX(0%);
+        }
+
+        .btn-bottomline2 {
+          transition: transform 0.6s ease;
+          transform-origin: 94%;
+          transform: rotate(-55deg);
+        }
+
+        .btn-topline2 {
+          transition: transform 0.6s ease;
+          transform-origin: 94%;
+          transform: rotate(55deg);
+        }
+      }
+    }
+  }
+
+  .btn-container1.slide {
+    transition: transform 0.5s ease;
+    transform: translateX(0) translateZ(8rem);
+  }
+
   .port-front {
     background-color: #464646;
     position: absolute;
@@ -20,6 +170,7 @@
     transform-style: preserve-3d;
     display: flex;
     justify-content: center;
+    overflow: auto;
 
     .portfolio-card {
       /* height: 80vh; */
@@ -81,6 +232,7 @@
       align-items: center;
       justify-content: center;
       overflow: hidden;
+      margin-bottom: 14px;  
     }
 
     .portfolio-card .project-grid .project-box .project-img {
@@ -240,155 +392,6 @@
     .portfolio-card .modal-stack {
       width: 0%;
       opacity: 0;
-    }
-
-    .btn-container1 {
-      position: absolute;
-      /* bottom: 20px; */
-      left: 30px;
-      transition: transform 0.5s ease;
-      transform: translateX(-150%) translateZ(8rem);
-      // trying to center
-      top: 45%;
-
-      .down-btn1 {
-        position: relative;
-        height: 50px;
-        // width: 0;
-        background: none;
-        color: inherit;
-        border: none;
-        padding: 0;
-        font: inherit;
-        cursor: pointer;
-        outline: inherit;
-
-        .btn-topline1 {
-          height: 3px;
-          background-color: #aaaaaa;
-          width: 40px;
-          transition: transform 0.6s ease;
-          transform-origin: 10%;
-          transform: rotate(-40deg);
-          border-bottom-right-radius: 5px;
-          border-top-right-radius: 10px;
-        }
-        .btn-bottomline1 {
-          height: 3px;
-          background-color: #aaaaaa;
-          width: 40px;
-          transition: transform 0.6s ease;
-          transform-origin: 7%;
-          transform: rotate(40deg);
-          border-bottom-right-radius: 20px;
-          border-top-right-radius: 5px;
-          /* position: absolute; */
-          /* bottom: 40px; */
-        }
-
-        .btn-text1 {
-          overflow: hidden;
-          position: absolute;
-          top: 2px;
-          right: -45px;
-        }
-
-        .port-text1 {
-          font-family: "Heebo", sans-serif;
-          display: inline-block;
-          // opacity: 0.2;
-          font-size: 25px;
-          transition: transform 0.2s ease;
-          transform: translateX(-100%);
-          color: #b9b9b9;
-          z-index: 10;
-        }
-
-        &:hover {
-          .port-text1 {
-            font-family: "Heebo", sans-serif;
-            display: inline-block;
-            font-size: 25px;
-            transition: transform 0.2s ease;
-            transform: translateX(0);
-            color: #b9b9b9;
-            z-index: 10;
-          }
-
-          .btn-bottomline1 {
-            transition: transform 0.6s ease;
-            transform-origin: 7%;
-            transform: rotate(55deg);
-          }
-
-          .btn-topline1 {
-            transition: transform 0.6s ease;
-            transform-origin: 10%;
-            transform: rotate(-55deg);
-          }
-        }
-      }
-    }
-
-    .btn-container2 {
-      @extend .btn-container1;
-      right: 30px;
-      left: auto;
-      transform: translateX(150%) translateZ(8rem);
-
-      .down-btn2 {
-        @extend .down-btn1;
-
-        .btn-topline2 {
-          @extend .btn-topline1;
-          transform-origin: 92%;
-          transform: rotate(40deg);
-        }
-
-        .btn-bottomline2 {
-          @extend .btn-bottomline1;
-          transform-origin: 92%;
-          transform: rotate(-40deg);
-        }
-
-        .btn-text2 {
-          @extend .btn-text1;
-          top: -3px;
-          left: -60px;
-          right: auto;
-        }
-
-        .port-text2 {
-          @extend .port-text1;
-          transform: translateX(100%);
-        }
-
-        &:hover {
-          .port-text2 {
-            z-index: 99999;
-            opacity: 1;
-            transition: transform 0.2s ease;
-            transform: translateX(0%);
-          }
-
-          .btn-bottomline2 {
-            transition: transform 0.6s ease;
-            transform-origin: 94%;
-            transform: rotate(-55deg);
-          }
-
-          .btn-topline2 {
-            transition: transform 0.6s ease;
-            transform-origin: 94%;
-            transform: rotate(55deg);
-          }
-        }
-      }
-    }
-
-    .btn-container1.slide {
-      transition: transform 0.5s ease;
-      transform: translateX(0) translateZ(8rem);
     }
   }
 }
