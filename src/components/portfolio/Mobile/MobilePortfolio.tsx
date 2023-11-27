@@ -1,22 +1,22 @@
 import React, { useEffect, useLayoutEffect, useState } from "react";
-import "./WebPortfolio.scss";
-import { skills, projects } from "../../utils/projectData";
-import ProjectModal from "../ProjectModal/ProjectModal";
-import AnimatedDiv from "../common/AnimatedDiv";
+import "./MobilePortfolio.scss";
+import { nativeSkills, projects } from "../../../utils/projectData";
+import ProjectModal from "../../ProjectModal/ProjectModal";
+import AnimatedDiv from "../../common/AnimatedDiv";
 import { NavigateFunction } from "react-router-dom";
 
-type Props={
-  navigate:NavigateFunction;
-}
+type Props = {
+  navigate: NavigateFunction;
+};
 
-export default function Portfolio({ navigate }: Props) {
+export default function MobilePortfolio({ navigate }: Props) {
   const lineRef: any = React.createRef();
   const lineRef1: any = React.createRef();
   const closeRef1: React.RefObject<any> = React.createRef();
   const closeRef2: React.RefObject<any> = React.createRef();
   const btnRef: any = React.createRef();
   const btnRef1: any = React.createRef();
-  
+
   const [refs, setRefs] = useState<any>(projects.map(() => React.createRef()));
   const [clicked, setClicked] = useState(false);
   const [selIndex, setSelIndex] = useState<number>(-1);
@@ -124,93 +124,92 @@ export default function Portfolio({ navigate }: Props) {
   }, [divRef]);
 
   const handleClick = () => {
-      navigate("/");
+    navigate("/web-portfolio");
   };
 
   return (
-    <AnimatedDiv initial={{x:"100%",transition:{duration:.4,ease:"linear"}}} animate={{x:"0%",transition:{duration:.4,ease:"linear",delay:0}}} exit={{x:"100%",transition:{duration:.4,ease:"linear"}}} className="container">
-        <div className="port-front">
-          <div ref={lineRef} className="line-top" />
-          <div ref={lineRef1} className="line-down" />
-          <div className="portfolio-card">
-            <div ref={btnRef} className="btn-container1">
-              <button className="down-btn1" onClick={handleClick}>
-                <div className="btn-topline1" />
-                <h1 className="btn-text1">
-                  <span className="port-text1">intro</span>
-                </h1>
-                <div className="btn-bottomline1" />
-              </button>
-            </div>
-          <div ref={btnRef1} className="btn-container2">
-            <button className="down-btn" onClick={handleClick}>
-              <div className="btn-topline" />
-              <h1 className="btn-text">
-                <span className="port-text">about me</span>
+    <AnimatedDiv
+      initial={{ x: "100%", transition: { duration: 0.4, ease: "linear" } }}
+      animate={{
+        x: "0%",
+        transition: { duration: 0.4, ease: "linear", delay: 0 },
+      }}
+      exit={{ x: "100%", transition: { duration: 0.4, ease: "linear" } }}
+      className="mobileportfolio-container"
+    >
+      <div className="mobile-port-front">
+        <div ref={lineRef} className="line-top" />
+        <div ref={lineRef1} className="line-down" />
+        <div className="portfolio-card">
+          <div ref={btnRef} className="btn-container1">
+            <button className="down-btn1" onClick={handleClick}>
+              <div className="btn-topline1" />
+              <h1 className="btn-text1">
+                <span className="port-text1">web</span>
               </h1>
-              <div className="btn-bottomline" />
+              <div className="btn-bottomline1" />
             </button>
           </div>
-            <h1 className="header">Web Developer Portfolio</h1>
-            <p className="sub-text">
-              Check out few of the stuff I built to explore and improve my skills.
-            </p>
-            {/* <p className="sub-header">skills</p> */}
-            <div className="skill-box">
-              <div className="skill-container">
-                {skills.map((item, index) => {
-                  return (
-                    <div className="skill">
-                      <p className="skill-name">{item}</p>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-            <div className="project-grid">
-              {projects.map((item, index) => {
-                const { image, name, techStack } = item;
+          <h1 className="header">Native Developer Portfolio</h1>
+          <p className="sub-text">
+            Check out few of the stuff I built to explore and improve my skills.
+          </p>
+          {/* <p className="sub-header">skills</p> */}
+          <div className="skill-box">
+            <div className="skill-container">
+              {nativeSkills.map((item, index) => {
                 return (
-                  <div ref={refs[index]} className="project-box">
-                    {index !== selIndex && (
-                      <>
-                        <img className="project-img" src={image} />
-                        <div className="stack-container">
-                          <div className="stack-box">
-                            {techStack.map((tech, ind) => {
-                              return <p className="tech-name">{tech}</p>;
-                            })}
-                            <div className="btn-container1">
-                              <button
-                                className="view-btn"
-                                onClick={() => openModal(index)}
-                              >
-                                more
-                              </button>
-                            </div>
-                          </div>
-                        </div>
-                      </>
-                    )}
+                  <div className="skill">
+                    <p className="skill-name">{item}</p>
                   </div>
                 );
               })}
             </div>
-            {clicked && selIndex >= 0 && (
-              <ProjectModal
-                {...{
-                  closeModal,
-                  closeRef1,
-                  closeRef2,
-                  dimension,
-                  divRef,
-                  projects,
-                  selIndex,
-                }}
-              />
-            )}
           </div>
+          <div className="project-grid">
+            {projects.map((item, index) => {
+              const { image, name, techStack } = item;
+              return (
+                <div ref={refs[index]} className="project-box">
+                  {index !== selIndex && (
+                    <>
+                      <img className="project-img" src={image} alt="project-img" />
+                      <div className="stack-container">
+                        <div className="stack-box">
+                          {techStack.map((tech, ind) => {
+                            return <p className="tech-name">{tech}</p>;
+                          })}
+                          <div className="btn-container4">
+                            <button
+                              className="view-btn"
+                              onClick={() => openModal(index)}
+                            >
+                              more
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+          {clicked && selIndex >= 0 && (
+            <ProjectModal
+              {...{
+                closeModal,
+                closeRef1,
+                closeRef2,
+                dimension,
+                divRef,
+                projects,
+                selIndex,
+              }}
+            />
+          )}
         </div>
+      </div>
     </AnimatedDiv>
   );
 }

@@ -59,9 +59,6 @@ export default function ProjectModal({
         {projects[selIndex].techStack.map((tech, ind) => {
           return <p className="tech-name">{tech}</p>;
         })}
-        <div className="btn-container1">
-          <button className="view-btn">more</button>
-        </div>
       </div>
     </div>
   );

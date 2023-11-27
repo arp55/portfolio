@@ -1,6 +1,6 @@
 import { afloatImg, dashBoardImg } from "./assets";
 
-export const skills = [
+export const webSkills = [
   "html",
   "css",
   "javascript",
@@ -13,6 +13,16 @@ export const skills = [
   "mysql",
   "mongodb",
   "animations",
+];
+
+export const nativeSkills = [
+  "react native",
+  "animated",
+  "expo",
+  "react native reanimated",
+  "react native gesture handler",
+  "react native redash",
+  "react native svg",
 ];
 
 export const projects = [

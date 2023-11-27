@@ -1,4 +1,4 @@
-import React, { useLayoutEffect } from "react";
+import React, { useLayoutEffect,useState } from "react";
 import { NavigateFunction } from "react-router-dom";
 import AnimatedDiv from "../common/AnimatedDiv";
 import "./Landing.scss";
@@ -6,6 +6,9 @@ import "./Landing.scss";
 type Props = {
   navigate: NavigateFunction;
 };
+
+const aboutExit={ y: "-100%", transition: { duration: 0.4, ease: "linear" } }
+const portfolioExit={ x: "-100%", transition: { duration: 0.4, ease: "linear" } }
 
 export default function Landing({ navigate }: Props) {
   const introRef: any = React.createRef();
@@ -15,13 +18,22 @@ export default function Landing({ navigate }: Props) {
   const lineRef: any = React.createRef();
   const lineRef1: any = React.createRef();
   const btnRef: any = React.createRef();
-
-  const handleClick = () => {
+  const btnRef1: any = React.createRef();
+  
+  //for switching navigation animation
+  const [exitAnimation, setExitAnimation] = useState<any>(aboutExit)
+  
+  const handleClick = (route:string)=>() => {
     // const div = introRef.current;
     // div.classList.toggle("intro-flip");
     // setTimeout(() => {
-      navigate("/portfolio");
     // }, 1500);
+    if(route==="web-portfolio"){
+      setExitAnimation(portfolioExit)
+    }else if(route==="about"){
+      setExitAnimation(aboutExit)
+    }
+    navigate(route);
   };
 
   useLayoutEffect(() => {
@@ -34,12 +46,14 @@ export default function Landing({ navigate }: Props) {
     }, 500);
     setTimeout(() => {
       const btn = btnRef.current;
+      const btn1 = btnRef1.current;
       const classArr = [...btn.classList];
       if (!classArr.includes("slide")) {
         btn.classList.toggle("slide");
+        btn1.classList.toggle("slide");
       }
     }, 500);
-  }, [lineRef, btnRef]);
+  }, [lineRef, btnRef,btnRef1]);
 
   useLayoutEffect(() => {
     setTimeout(() => {
@@ -82,8 +96,8 @@ export default function Landing({ navigate }: Props) {
   }, [nameRef2]);
 
   return (
-    <AnimatedDiv initial={{x:"-100%",transition:{duration:.4,ease:"linear"}}} animate={{x:"0%",transition:{duration:.4,ease:"linear"}}} exit={{x:"-100%",transition:{duration:.4,ease:"linear"}}} className="container">
-        <div className="intro-back"></div>
+    <AnimatedDiv initial={{x:"-100%",transition:{duration:.4,ease:"linear"}}} animate={{x:"0%",transition:{duration:.4,ease:"linear"}}} exit={exitAnimation} className="landing-container">
+        {/* <div className="intro-back"></div> */}
         <div ref={introRef} className="intro-front">
           <div ref={lineRef} className="line-top" />
           <div ref={lineRef1} className="line-down" />
@@ -105,10 +119,19 @@ export default function Landing({ navigate }: Props) {
             </h1>
           </div>
           <div ref={btnRef} className="btn-container">
-            <button className="down-btn" onClick={handleClick}>
+            <button className="down-btn" onClick={handleClick("web-portfolio")}>
               <div className="btn-topline" />
               <h1 className="btn-text">
                 <span className="port-text">portfolio</span>
+              </h1>
+              <div className="btn-bottomline" />
+            </button>
+          </div>
+          <div ref={btnRef1} className="btn-container about-me">
+            <button className="down-btn" onClick={handleClick("about")}>
+              <div className="btn-topline" />
+              <h1 className="btn-text">
+                <span className="port-text">about</span>
               </h1>
               <div className="btn-bottomline" />
             </button>
