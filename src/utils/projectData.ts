@@ -18,10 +18,11 @@ export const webSkills = [
 export const nativeSkills = [
   "react native",
   "animated",
+  "expo",
   "react native reanimated",
+  "react native gesture handler",
   "react native redash",
   "react native svg",
-  "react native gesture handler"
 ];
 
 export const projects = [

@@ -145,7 +145,7 @@ export default function MobilePortfolio({ navigate }: Props) {
             <button className="down-btn1" onClick={handleClick}>
               <div className="btn-topline1" />
               <h1 className="btn-text1">
-                <span className="port-text1">web portfolio</span>
+                <span className="port-text1">web</span>
               </h1>
               <div className="btn-bottomline1" />
             </button>

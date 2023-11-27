@@ -136,7 +136,7 @@ export default function Portfolio({ navigate }: Props) {
       setExitAnimation(introExit)
     }
     // setTimeout(()=>{})
-    navigate(`/${route}`);
+    navigate(route);
   };
 
   return (
@@ -166,7 +166,7 @@ export default function Portfolio({ navigate }: Props) {
             <button className="down-btn2" onClick={()=>handleClick("mobile-portfolio")}>
               <div className="btn-topline2" />
               <h1 className="btn-text2">
-                <span className="port-text2">mobile portfolio</span>
+                <span className="port-text2">native</span>
               </h1>
               <div className="btn-bottomline2" />
             </button>

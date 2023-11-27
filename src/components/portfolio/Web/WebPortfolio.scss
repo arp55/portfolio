@@ -4,7 +4,7 @@
   justify-content: center;
   height: 100vh;
   overflow: hidden;
-  overflow-y: auto;
+  // overflow-y: auto;
   transform-style: preserve-3d;
   background-color: #787777;
 
@@ -289,7 +289,7 @@
         .btn-text1 {
           overflow: hidden;
           position: absolute;
-          top: 4px;
+          top: 2px;
           right: -45px;
         }
 
@@ -353,8 +353,8 @@
 
         .btn-text2 {
           @extend .btn-text1;
-          top: -8px;
-          left: -106px;
+          top: -3px;
+          left: -60px;
           right: auto;
         }
 
