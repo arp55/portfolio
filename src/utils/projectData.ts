@@ -44,4 +44,32 @@ export const projects = [
     description: ["Lorem Ipsum"],
     techStack: ["ReactJs", "MaterialUI", "css", "html5"],
   },
+  {
+    id: Math.random(),
+    image: afloatImg,
+    name: "Afloat Animation",
+    description: ["Lorem Ipsum"],
+    techStack: ["ReactJs", "MaterialUI", "css", "html5"],
+  },
+  {
+    id: Math.random(),
+    image: afloatImg,
+    name: "Afloat Animation",
+    description: ["Lorem Ipsum"],
+    techStack: ["ReactJs", "MaterialUI", "css", "html5"],
+  },
+  {
+    id: Math.random(),
+    image: afloatImg,
+    name: "Afloat Animation",
+    description: ["Lorem Ipsum"],
+    techStack: ["ReactJs", "MaterialUI", "css", "html5"],
+  },
+  {
+    id: Math.random(),
+    image: afloatImg,
+    name: "Afloat Animation",
+    description: ["Lorem Ipsum"],
+    techStack: ["ReactJs", "MaterialUI", "css", "html5"],
+  },
 ];

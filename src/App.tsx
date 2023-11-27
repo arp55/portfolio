@@ -3,9 +3,7 @@ import "./App.scss";
 import AnimatedRoutes from "./routes/AnimatedRoutes";
 
 function App() {
-  return (
-    <AnimatedRoutes />
-  );
+  return <AnimatedRoutes />;
 }
 
 export default App;
