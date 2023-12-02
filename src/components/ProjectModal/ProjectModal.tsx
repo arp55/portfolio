@@ -4,7 +4,7 @@ type Project = {
   id: number;
   image: any;
   name: string;
-  description: Array<string>;
+  description: string;
   techStack: Array<string>;
 };
 
@@ -59,14 +59,19 @@ export default function ProjectModal({
           alt={projects[selIndex].name}
         />
       </div>
-      <div className="modal-stack">
-        {projects[selIndex].techStack.map((tech, ind) => {
-          return (
-            <p key={ind} className="tech-name">
-              {tech}
-            </p>
-          );
-        })}
+      <div className="box2">
+        <div className="modal-stack">
+          {projects[selIndex].techStack.map((tech, ind) => {
+            return (
+              <p key={ind} className="tech-name">
+                {tech}
+              </p>
+            );
+          })}
+        </div>
+        <div className="project-description">
+          {projects[selIndex].description}
+        </div>
       </div>
     </div>
   );

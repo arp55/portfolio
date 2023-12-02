@@ -194,21 +194,21 @@ export default function Portfolio({ navigate }: Props) {
               );
             })}
           </div>
-          {clicked && selIndex >= 0 && (
-            <ProjectModal
-              {...{
-                closeModal,
-                closeRef1,
-                closeRef2,
-                dimension,
-                divRef,
-                projects,
-                selIndex,
-              }}
-            />
-          )}
         </div>
       </div>
+      {clicked && selIndex >= 0 && (
+        <ProjectModal
+          {...{
+            closeModal,
+            closeRef1,
+            closeRef2,
+            dimension,
+            divRef,
+            projects,
+            selIndex,
+          }}
+        />
+      )}
     </AnimatedDiv>
   );
 }
