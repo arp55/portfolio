@@ -3,7 +3,7 @@ import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import Landing from "../components/landing/Landing";
 import WebPortfolio from "../components/portfolio/Web/WebPortfolio";
 import { AnimatePresence } from "framer-motion";
-import MobilePortfolio from "../components/portfolio/Mobile/MobilePortfolio";
+// import MobilePortfolio from "../components/portfolio/Mobile/MobilePortfolio";
 import About from "../components/About/About";
 
 export default function AnimatedRoutes() {
@@ -18,10 +18,10 @@ export default function AnimatedRoutes() {
           path="/web-portfolio"
           element={<WebPortfolio {...{ navigate }} />}
         />
-        <Route
+        {/* <Route
           path="/mobile-portfolio"
           element={<MobilePortfolio {...{ navigate }} />}
-        />
+        /> */}
         <Route path="/about" element={<About {...{ navigate }} />} />
       </Routes>
     </AnimatePresence>

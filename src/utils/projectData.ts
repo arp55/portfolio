@@ -1,4 +1,11 @@
-import { adminUi, afloatImg, dashBoardImg, ganttClone1 } from "./assets";
+import {
+  adminUi,
+  afloatImg,
+  dashBoardImg,
+  dummyImg,
+  ganttClone1,
+  speedDial1,
+} from "./assets";
 
 export const webSkills = [
   "html",
@@ -12,7 +19,16 @@ export const webSkills = [
   "expressjs",
   "mysql",
   "mongodb",
-  "animations",
+  // "animations",
+  "react native",
+  "animated",
+  "expo",
+  "react native reanimated",
+  "react native gesture handler",
+  "react native redash",
+  "react native svg",
+  "react native maps",
+  "d3",
 ];
 
 export const nativeSkills = [
@@ -44,6 +60,14 @@ export const projects = [
   },
   {
     id: Math.random(),
+    image: speedDial1,
+    name: "Speed Dial",
+    description:
+      "Implemented speed dial functionality. Frontend sends request using the characters associated with each key. Backend receives the request and sends the resulting string that matches those characters. The result is displayed on the screen.",
+    techStack: ["ReactJs", "MaterialUI", "Express", "Mongoose"],
+  },
+  {
+    id: Math.random(),
     image: dashBoardImg,
     name: "Dashboard Layout",
     description:
@@ -54,7 +78,42 @@ export const projects = [
     id: Math.random(),
     image: afloatImg,
     name: "Afloat Animation",
-    description: "Lorem Ipsum",
-    techStack: ["ReactJs", "css", "html5"],
+    description:
+      "Implmented an interesting landing page with smooth animations. Explored gsap library to implement animations for various elements which also allows a timeout for each animation.",
+    techStack: ["html", "css", "javascript", "gsap"],
+  },
+  {
+    id: Math.random(),
+    image: dummyImg,
+    name: "Vidly",
+    description:
+      "Built RestApis with various methods such as get, post, put and delete. Used middlewares for throwing errors and autheticating routes using jwt. Each protected route is validated. Containerised the application using Docker.",
+    techStack: ["express", "mongoose", "bcrypt", "jsonwebtoken", "docker"],
+  },
+  {
+    id: Math.random(),
+    image: dummyImg,
+    name: "React native reanimated 2",
+    description:
+      "Implemented various animations and transitions based on famous applications such as spotify, airbnb, chrome, appstore , etc. Explored libraries such as react native reanimated v2 and react native gesture handler and implemented smooth, interesting animations which improved the UX.",
+    techStack: [
+      "react-native",
+      "react-native-reanimated",
+      "react-native-gesture-handler",
+      "react-native-svg",
+    ],
+  },
+  {
+    id: Math.random(),
+    image: dummyImg,
+    name: "React native reanimated",
+    description:
+      "Implemented various animations and transitions based on famous applications such as tinder, headspace, snapchat, etc. Explored libraries such as react native reanimated v1 and react native gesture handler and implemented smooth, interesting animations which improved the UX.",
+    techStack: [
+      "react-native",
+      "react-native-reanimated",
+      "react-native-gesture-handler",
+      "react-native-maps",
+    ],
   },
 ];
