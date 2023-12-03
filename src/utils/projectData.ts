@@ -19,7 +19,16 @@ export const webSkills = [
   "expressjs",
   "mysql",
   "mongodb",
-  "animations",
+  // "animations",
+  "react native",
+  "animated",
+  "expo",
+  "react native reanimated",
+  "react native gesture handler",
+  "react native redash",
+  "react native svg",
+  "react native maps",
+  "d3",
 ];
 
 export const nativeSkills = [
