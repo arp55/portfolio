@@ -131,7 +131,7 @@ export default function Portfolio({ navigate }: Props) {
           <div className="btn-bottomline1" />
         </button>
       </div>
-      <div ref={btnRef1} className="btn-container2">
+      {/* <div ref={btnRef1} className="btn-container2">
         <button
           className="down-btn2"
           onClick={() => handleClick("mobile-portfolio")}
@@ -142,7 +142,7 @@ export default function Portfolio({ navigate }: Props) {
           </h1>
           <div className="btn-bottomline2" />
         </button>
-      </div>
+      </div> */}
       <div className="port-front">
         <div className="portfolio-card">
           <h1 className="header">Web Developer Portfolio</h1>
