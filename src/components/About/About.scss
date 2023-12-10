@@ -1,4 +1,4 @@
-.about-container{
+.about-container {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -7,47 +7,49 @@
   transform-style: preserve-3d;
   background-color: #464646;
 
-  .about-box{
-    
-    .about-header{
-        color: rgb(238, 240, 242);
-        font-size: 31px;
-        font-family: "Anek Latin";
-
-        &::after{
-            content: "";
-            display: block;
-            height: 2px;
-            width: 43px;
-            margin-top: 2px;
-            background-color: rgb(238, 240, 242);
-        }
-    }
-    .about-data{
-        margin-top: 16px;
-        font-family: "Heebo", sans-serif;
-        font-size: 13px;
-        color: aliceblue;
+  .about-box {
+    @media (max-width: 767px) {
+      padding: 0 16px;
     }
 
+    .about-header {
+      color: rgb(238, 240, 242);
+      font-size: 31px;
+      font-family: "Anek Latin";
 
-    .connect-text{
-        margin-top: 8px;
-        font-family: "Heebo", sans-serif;
-        font-size: 13px;
-        color: aliceblue;
-        margin-bottom: 10px;
+      &::after {
+        content: "";
+        display: block;
+        height: 2px;
+        width: 43px;
+        margin-top: 2px;
+        background-color: rgb(238, 240, 242);
+      }
+    }
+    .about-data {
+      margin-top: 16px;
+      font-family: "Heebo", sans-serif;
+      font-size: 13px;
+      color: aliceblue;
     }
 
-    .social-img{
-        height: 40px;
-        width: 40px;
-        margin-right: 12px;
-        cursor:pointer;
+    .connect-text {
+      margin-top: 8px;
+      font-family: "Heebo", sans-serif;
+      font-size: 13px;
+      color: aliceblue;
+      margin-bottom: 10px;
     }
-}
 
-.btn-container {
+    .social-img {
+      height: 40px;
+      width: 40px;
+      margin-right: 12px;
+      cursor: pointer;
+    }
+  }
+
+  .btn-container {
     position: absolute;
     /* bottom: 20px; */
     top: 30px;
@@ -57,7 +59,7 @@
 
     .down-btn {
       position: relative;
-      height:50px;
+      height: 50px;
       width: 70px;
       background: none;
       color: inherit;
@@ -95,7 +97,7 @@
       .btn-text {
         overflow: hidden;
         position: absolute;
-        top: 40px; 
+        top: 40px;
         left: 6px;
       }
 
