@@ -172,6 +172,10 @@
     justify-content: center;
     overflow: auto;
 
+    @media (max-width: 767px) {
+      padding: 5em 0;
+    }
+
     .portfolio-card {
       /* height: 80vh; */
       width: 70%;
@@ -222,6 +226,11 @@
       display: grid;
       grid-template-columns: 50% 50%;
       justify-items: center;
+
+      @media (max-width: 767px) {
+        display: block;
+        margin-bottom: 14px;
+      }
     }
 
     .portfolio-card .project-grid .project-box {
@@ -328,6 +337,12 @@
       display: flex;
       justify-content: center;
       align-items: center;
+
+      @media (max-width: 767px) {
+        margin-top: 36px;
+        margin-bottom: 16px;
+        width: 100%;
+      }
     }
 
     .box2 {
@@ -337,6 +352,10 @@
       align-items: center;
       justify-content: center;
       opacity: 1;
+
+      @media (max-width: 767px) {
+        width: 100%;
+      }
 
       .project-description {
         margin-top: 20px;

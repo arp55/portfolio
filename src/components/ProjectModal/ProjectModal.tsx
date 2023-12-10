@@ -1,3 +1,4 @@
+import { useMediaQuery } from "@mui/material";
 import React from "react";
 
 type Project = {
@@ -32,6 +33,7 @@ export default function ProjectModal({
   projects,
   selIndex,
 }: Props) {
+  const responsive = useMediaQuery("(max-width:767px)");
   return (
     <div
       ref={divRef}
@@ -45,7 +47,8 @@ export default function ProjectModal({
         opacity: 0.4,
         backgroundColor: "#4a4a4a",
         transition: "all .3s ease",
-        display: "flex",
+        display: responsive ? "block" : "flex",
+        padding: responsive ? "20px 29px" : 0,
       }}
     >
       <button onClick={closeModal}>
