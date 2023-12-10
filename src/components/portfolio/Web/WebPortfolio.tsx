@@ -60,7 +60,6 @@ export default function Portfolio({ navigate }: Props) {
   async function openModal(index: number) {
     const pos = await refs[index].current.getBoundingClientRect();
     setSelIndex(index);
-    console.log({ index });
     const { top, left, height, width } = pos;
     const obj = {
       top,
